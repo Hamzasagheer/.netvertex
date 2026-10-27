@@ -1,0 +1,19 @@
+@vertex_HostAddress = http://localhost:5291
+
+GET {{vertex_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+# Swagger Specification JSON
+GET {{vertex_HostAddress}}/swagger/v1/swagger.json
+Accept: application/json
+
+###
+
+# ASP.NET Core OpenAPI v1 Document
+GET {{vertex_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
