@@ -61,15 +61,103 @@ public IActionResult stat(){
         return BadRequest(new{success=false, message="Id not found"});
 
 
-    
+
     
 }
+
+
+[HttpPut("update-profile")]
+public IActionResult updateprofile([FromQuery] int id,[FromBody] UserProfileDTO userpDTO)
+{
+    if(id!=1)
+    {
+        return BadRequest(new{sucess=false,message="id not found"});
+    }
+    var newData=new UserProfileDTO{
+        name=userpDTO.name,
+        age=userpDTO.age,
+        phone=userpDTO.phone,
+        
+    };
+    return Ok(new{sucess=true,message="profile update successfully",data=newData});
+}
+
+[HttpPost("login")]
+
+public IActionResult login([FromBody]LoginnDTO loginnDTO){
+    if(loginnDTO.email!="hamza@gmail.com" || loginnDTO.password!="hamza1234"){
+        return BadRequest(new{sucess=false,message="email and password are required"});
+    }
+    var newlogin=new LoginnDTO{
+        email=loginnDTO.email,
+        password=loginnDTO.password,
+    };
+    return Ok(new{sucess=true,message="profile update successfully",data=newlogin});
+}
+
+
+
+[HttpPost("register")]
+public IActionResult register([FromBody]UserRegisterDTO userRegisterDTO){
+    if(userRegisterDTO==null){
+        return BadRequest(new{sucess=false,message="Required all fields"});
+    }
+
+    return Ok(new{sucess=true,message="profile update successfully",data=new{
+            name=userRegisterDTO.name,
+            age=userRegisterDTO.age,
+            phone=userRegisterDTO.phone,
+            email=userRegisterDTO.email,
+            password=userRegisterDTO.password,
+            
+    }});
+    
+
+  
+      
+    }
+      [HttpGet("userprofile")]
+
+    public IActionResult userprofile([FromQuery]int id){
+          var usrprofile=new{
+            name="hamza",
+            age="26",
+            phone="123456789",
+          };
+        if(id==1){
+             return Ok(new{sucess=true,message="user profile",data=usrprofile});
+        }
+      return BadRequest(new{sucess=false,message="id not found"});
+        }
+    
+
+
+
+    [HttpPut("profileupdate")]
+    public IActionResult profileupdate([FromQuery] int id,[FromBody] updateProfileDTO updateprofile){
+      if(id!=1)
+      {
+        return BadRequest(new{sucess=false,message="id not found"});
+      }
+      var newprofile=new updateProfileDTO{
+        name=updateprofile.name,
+        age=updateprofile.age,
+        phone=updateprofile.phone,
+        email=updateprofile.email,
+        password=updateprofile.password,
+        confirm_password=updateprofile.confirm_password,
+      };
+      return Ok(new{sucess=true,message="profile update successfully",data=newprofile});
+      
+    }
+}
+
     }
 
 
 
 
-}
+
     
 
 

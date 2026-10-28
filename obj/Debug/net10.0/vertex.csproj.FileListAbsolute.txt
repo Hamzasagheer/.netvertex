@@ -36,3 +36,4 @@ D:\DotNet\vertex\vertex\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\DotNet\vertex\vertex\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\DotNet\vertex\vertex\bin\Debug\net10.0\vertex.xml
 D:\DotNet\vertex\vertex\obj\Debug\net10.0\vertex.xml
+D:\DotNet\vertex\vertex\obj\Debug\net10.0\vertex.sourcelink.json
