@@ -1,6 +1,12 @@
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using vertex.src.Data; // ✅ Yeh likhein
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Add services to the container.
 

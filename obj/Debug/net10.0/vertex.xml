@@ -11,6 +11,42 @@
             <returns>A list of 5-day forecast records.</returns>
             <response code="200">Returns the 5-day weather forecast list.</response>
         </member>
+        <member name="T:vertex.Migrations.UserTable">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.UserTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.UserTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.UserTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:vertex.Migrations.addPasswordInUserModel">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.addPasswordInUserModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.addPasswordInUserModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.addPasswordInUserModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:vertex.Migrations.attendanceModel">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.attendanceModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.attendanceModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.attendanceModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:Program">
             <summary>
             Auto-generated public partial Program class for top-level statement apps.
