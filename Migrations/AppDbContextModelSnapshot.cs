@@ -51,6 +51,74 @@ namespace vertex.Migrations
                     b.ToTable("Attendance");
                 });
 
+            modelBuilder.Entity("vertex.src.Models.LeaveModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("end_date")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("leave_type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("start_date")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("Leaves");
+                });
+
+            modelBuilder.Entity("vertex.src.Models.TaskModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("due_date")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("Tasks");
+                });
+
             modelBuilder.Entity("vertex.src.Models.UserModel", b =>
                 {
                     b.Property<int>("Id")
@@ -84,6 +152,28 @@ namespace vertex.Migrations
                 });
 
             modelBuilder.Entity("vertex.src.Models.AttendanceModel", b =>
+                {
+                    b.HasOne("vertex.src.Models.UserModel", "UserModel")
+                        .WithMany()
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserModel");
+                });
+
+            modelBuilder.Entity("vertex.src.Models.LeaveModel", b =>
+                {
+                    b.HasOne("vertex.src.Models.UserModel", "UserModel")
+                        .WithMany()
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserModel");
+                });
+
+            modelBuilder.Entity("vertex.src.Models.TaskModel", b =>
                 {
                     b.HasOne("vertex.src.Models.UserModel", "UserModel")
                         .WithMany()

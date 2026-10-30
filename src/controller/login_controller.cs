@@ -67,5 +67,24 @@ public async Task<IActionResult> Login([FromBody] UserLoginDTOs model)
     });
 }
 
+
+[HttpPost("leave")]
+public async Task<IActionResult> LeaveApplication([FromBody] LeaveApplicationDTO leaveApplicationDTO){
+    var newUser = new LeaveModel{
+        user_id=leaveApplicationDTO.user_id,
+        leave_type = leaveApplicationDTO.leave_type,
+        start_date = leaveApplicationDTO.start_date,
+        end_date = leaveApplicationDTO.end_date,
+        status = leaveApplicationDTO.status,
+    };
+    _context.Leaves.Add(newUser);
+    await _context.SaveChangesAsync();
+    return Ok(new { success = true, message = "Leave Application Submitted Successfully", data = newUser });
+
+
+}
+
+
+
     }
 }

@@ -47,6 +47,30 @@
         <member name="M:vertex.Migrations.attendanceModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:vertex.Migrations.AddLeaveTable">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddLeaveTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddLeaveTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddLeaveTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:vertex.Migrations.AddTaskTable">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddTaskTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddTaskTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:vertex.Migrations.AddTaskTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:Program">
             <summary>
             Auto-generated public partial Program class for top-level statement apps.

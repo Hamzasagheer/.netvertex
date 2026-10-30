@@ -16,5 +16,7 @@ namespace vertex.src.Data
         // 3. Database Table: Database ke andar "Users" table banayega
         public DbSet<UserModel> Users { get; set; }
         public DbSet<AttendanceModel> Attendance { get; set; }
+        public DbSet<LeaveModel> Leaves { get; set; }
+        public DbSet<TaskModel> Tasks { get; set; }
     }
 }

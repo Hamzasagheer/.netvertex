@@ -28,4 +28,18 @@ namespace vertex.src.Models;
         
     }
 
+    public class LeaveModel{
+        [Key]
+        public int Id { get; set; }
+        public int user_id { get; set; }
+        [ForeignKey("user_id")]
+        public UserModel UserModel { get; set; } = null!;
+        
+        public string leave_type { get; set; } = string.Empty;
+        public string start_date { get; set; } = string.Empty;
+        public string end_date { get; set; } = string.Empty;
+        public string status { get; set; } = string.Empty;
+        
+    }
+
 
